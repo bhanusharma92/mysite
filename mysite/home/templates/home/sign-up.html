@@ -1,0 +1,104 @@
+{% extends 'home/base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    Sign up with your email address
+                </div>
+            </div>
+            <br>
+            <form >
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" placeholder="Name" class="form-control"/><br/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" placeholder="Username" class="form-control"><br/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="email" placeholder="Email" class="form-control"/><br/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="email" placeholder="Confirm email" class="form-control"/><br/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="password" placeholder="Password" class="form-control"/><br/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        Date of Birth:<br/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-inline">
+                            <select class="form-control">
+                                <option selected disabled>Month</option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                            <input type="number" placeholder="Day" class="form-control" style="width:100px;" min="1"
+                                   max="31">
+                            <input type="number" placeholder="Year" class="form-control" style="width: 100px;"
+                                   min="1900" max="2017">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="form-check-label">
+                            <input type="radio" name="gender" value="male" class="custom-control-input"> Male &nbsp;
+                        </label>
+                        <label class="form-check-label">
+                            <input type="radio" name="gender" value="female" class="custom-control-input"> Female &nbsp;
+                        </label>
+                        <label class="form-check-label">
+                            <input type="radio" name="gender" value="other" class="custom-control-input"> Other<br/>
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="submit" value="SIGN UP" class="btn btn-primary btn-block">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+
+    </div>
+{% endblock content %}

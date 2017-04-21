@@ -1,0 +1,49 @@
+{% extends 'home/base.html' %}
+{% block content %}
+    <div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-12">
+                Log in with Username or email address
+            </div>
+        </div>
+        <br>
+        <form>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="email" placeholder="Username or email address" class="form-control"/><br/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <input type="email" placeholder="Password" class="form-control"/><br/>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" value="LOG IN" class="btn btn-primary btn-block">
+            </div>
+        </div>
+
+        </form>
+        <br>
+        <div class="row">
+            <div class="col-md-12 forgot-username-text">
+                <a class="" href="{% url 'password-reset' %}">
+                    Forgot your username or password?
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+    </div>
+{% endblock content %}
