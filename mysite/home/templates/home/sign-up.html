@@ -11,37 +11,41 @@
                 </div>
             </div>
             <br>
-            <form >
+            <form action="{% url 'sign-up' %}" method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="text" placeholder="Name" class="form-control"/><br/>
+                        {{ form.name.errors }}
+                        {{ form.name }}<br/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form.username.errors }}
+                        {{ form.username }}<br/>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="text" placeholder="Username" class="form-control"><br/>
+                        {{ form.email.errors }}
+                        {{ form.email }}<br/>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="email" placeholder="Email" class="form-control"/><br/>
+                        {{ form.confirm_email.errors }}
+                        {{ form.confirm_email }}<br/>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="email" placeholder="Confirm email" class="form-control"/><br/>
+                        {{ form.password.errors }}
+                        {{ form.password }}<br/>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <input type="password" placeholder="Password" class="form-control"/><br/>
-                    </div>
-                </div>
-
                 <div class="row">
                     <div class="col-md-12">
                         Date of Birth:<br/>
@@ -51,40 +55,25 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-inline">
-                            <select class="form-control">
-                                <option selected disabled>Month</option>
-                                <option>January</option>
-                                <option>February</option>
-                                <option>March</option>
-                                <option>April</option>
-                                <option>May</option>
-                                <option>June</option>
-                                <option>July</option>
-                                <option>August</option>
-                                <option>September</option>
-                                <option>October</option>
-                                <option>November</option>
-                                <option>December</option>
-                            </select>
-                            <input type="number" placeholder="Day" class="form-control" style="width:100px;" min="1"
-                                   max="31">
-                            <input type="number" placeholder="Year" class="form-control" style="width: 100px;"
-                                   min="1900" max="2017">
+                            {{ form.month.errors }}
+                            {{ form.month }}
+                            {{ form.day.errors }}
+                            {{ form.day }}
+                            {{ form.name.errors }}
+                            {{ form.year }}
                         </div>
                     </div>
                 </div>
-                <br>
+                <br/>
                 <div class="row">
                     <div class="col-md-12">
-                        <label class="form-check-label">
-                            <input type="radio" name="gender" value="male" class="custom-control-input"> Male &nbsp;
-                        </label>
-                        <label class="form-check-label">
-                            <input type="radio" name="gender" value="female" class="custom-control-input"> Female &nbsp;
-                        </label>
-                        <label class="form-check-label">
-                            <input type="radio" name="gender" value="other" class="custom-control-input"> Other<br/>
-                        </label>
+
+                        {% for radio in form.gender %}
+                            <span>
+                                {{ radio }}
+                            </span>
+                            &nbsp;
+                        {% endfor %}
                     </div>
                 </div>
                 <br>
